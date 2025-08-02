@@ -1,7 +1,10 @@
-const _ = require('lodash')
+const {createReadStream} = require('fs')
 
-const Items = [1, [2,[3, [4]]]]
-const newItems = _.flattenDeep(Items)
-console.log(newItems);
+const stream = createReadStream('./content/big-file.txt')
+
+stream.on('data', (chunk)=>{
+    console.log(`Recieved ${chunk.length} bytes of data`)
+})
+stream.on(error, (err)=> console.log(err))
 
 

@@ -4,7 +4,7 @@ const os = require('os')
 const user = os.userInfo()
 console.log(user)
 // get the uptime
-console.log(` The system uptime is : ${os.uptime()} seconds`)
+console.log(`The system uptime is : ${os.uptime()} seconds`)
 
 const currentOs = {
     name : os.type(),
